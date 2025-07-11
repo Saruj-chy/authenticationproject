@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Signup Form</title>
+  <title>Create User</title>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="/css/style.css">
@@ -10,17 +10,24 @@
 </head>
 <body>
   <section>
-    <form action="/req/signup" method="post">
-      <h1>Sign Up</h1>
+    <form action="/req/user/save" method="post">
+      <h1>User Create</h1>
         <div class="inputbox">
             <ion-icon name="person-outline"></ion-icon>
             <input type="text" id= "name" name="name" required>
             <label for="">Name</label>
         </div>
+
         <div class="inputbox">
             <ion-icon name="mail-outline"></ion-icon>
             <input type="email" id="email" name="email" required>
             <label for="">Email</label>
+        </div>
+
+        <div class="inputbox">
+            <ion-icon name="phone-outline"></ion-icon>
+            <input type="number" id="phone" name="phone" required>
+            <label for="">Phone</label>
         </div>
         
         <div class="inputbox">
@@ -33,56 +40,15 @@
           <input type="password" id="passwordcon" name="passwordcon" required>
           <label for="">Confirm Password</label>
       </div>
-      <div class="inputbox">
-            <ion-icon name="phone-outline"></ion-icon>
-            <input type="number" id="phone" name="phone" required>
-            <label for="">Phone</label>
-        </div>
+      
         <div class="inputbox">
             <ion-icon name="address-outline"></ion-icon>
             <input type="text" id="address" name="address" required>
             <label for="">Address</label>
         </div>  
-        <button id= "submit" type="submit">Sign Up</button>
-      <div class="register">
-        <p>Already have an account? <a href="/req/user">Log In</a></p>
-      </div>
+        <button id= "submit" type="submit">Save & Create</button>
+    
     </form>
   </section>
 </body>
 </html>
-<!-- <script>
-  const submitButttom = document.getElementById("submit");
-  submitButttom.addEventListener('click',()=>{
-    const userName = document.getElementById('userName').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('passwordcon').value;
-    const email = document.getElementById('email').value;
-    const data ={
-      userName,
-      email,
-      password
-    }
-    consol.log(userName+" password:"+password+"  email: "+email);
-    
-    if(password === confirmPassword){
-      const jsonData = JSON.stringify(data);
-      fetch('/req/signup', {
-        method: 'POST',
-        headers:{
-          'Content-Type': 'application/json'
-        },
-        body: jsonData
-      })
-      .then(response =>{
-        //alert('succesfull');
-        //if(response.status == 200){
-          //alert('succesfull');
-        //xs}
-      })
-    }
-    
-  })
-
-  
-</script> -->

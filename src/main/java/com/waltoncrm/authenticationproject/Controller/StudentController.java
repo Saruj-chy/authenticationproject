@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.waltoncrm.authenticationproject.Model.Student;
 import com.waltoncrm.authenticationproject.Service.StudentServiceImpl;
 
+import ch.qos.logback.core.model.Model;
+
 
 @Controller
 // @RestController
@@ -31,9 +33,21 @@ public class StudentController {
         return "student";
     }
 
-    @GetMapping("login")
-    public String login() {
-        return "login";
+    @PostMapping("/req/signup")
+    public String postMethodName(Student student) {
+        
+        System.out.println(student);
+        studentServiceImpl.CreateStudent(student);
+        
+        return "user";
+    }
+
+
+    
+
+    @GetMapping("/req/user")
+    public String user() {
+        return "user";
     }
     
 

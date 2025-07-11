@@ -32,3 +32,8 @@ spring:
                 dialect: org.hibernate.dialect.MySQL8Dialect
                 format_sql: true
         show-sql: true
+
+    thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
+        cache: false
