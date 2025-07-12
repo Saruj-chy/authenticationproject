@@ -21,8 +21,8 @@ What I used in this project?
 
 
 ## Tech Stack:
-Backend: Spring Boot, Spring Security, Spring MVC, Spring Data JPA
-Frontend: Thymeleaf (or HTML/CSS), Bootstrap, JavaScript
-Database: MySQL (via XAMPP)
-Tools: Visual Studio, Postman (for api testing), Git
+Backend: Spring Boot, Spring Security, Spring MVC, Spring Data JPA <br/>
+Frontend: Thymeleaf (or HTML/CSS), Bootstrap, JavaScript <br/>
+Database: MySQL (via XAMPP) <br/>
+Tools: Visual Studio, Postman (for api testing), Git <br/>
 
