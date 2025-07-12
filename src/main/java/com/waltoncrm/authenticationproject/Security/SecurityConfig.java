@@ -20,11 +20,19 @@ public class SecurityConfig {
          .csrf(AbstractHttpConfigurer::disable) //disable not for production
                 .formLogin(httpForm -> {
                     httpForm.loginPage("/login").permitAll();
-                    httpForm.defaultSuccessUrl("/index");
+                    httpForm.defaultSuccessUrl("/");
                 })
                 .authorizeHttpRequests(registry -> {
                     registry.requestMatchers("/req/**", "/css/**", "/js/**").permitAll();
                     registry.anyRequest().authenticated();
+                })
+                .logout(logout -> {
+                    logout.logoutUrl("/logout");
+                    logout.logoutSuccessUrl("/login?logout");
+                })
+                .sessionManagement(session -> {
+                    session.maximumSessions(1);
+                    // session.axSessionsPreventsLogin(false);m
                 })
                 .build();
     }
