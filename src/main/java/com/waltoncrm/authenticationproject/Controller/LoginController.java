@@ -68,5 +68,10 @@ public class LoginController {
         }
     }
 
+    @GetMapping("/get")
+    public String getSession(HttpSession session) {
+        return "auth/home";
+    }
+
 
 }

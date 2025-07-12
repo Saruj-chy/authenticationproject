@@ -3,6 +3,9 @@ server:
     error:
         include-message: always
         include-binding-errors: always
+    servlet:
+        session:
+            timeout: 1m
 spring:
     application:
         name: authenticationproject

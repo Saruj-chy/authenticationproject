@@ -16,9 +16,6 @@ import com.waltoncrm.authenticationproject.Model.User;
 import com.waltoncrm.authenticationproject.Service.UserService;
 
 
-
-
-
 @Controller
 public class UserController {
     @Autowired
