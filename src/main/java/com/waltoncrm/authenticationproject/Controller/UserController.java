@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.waltoncrm.authenticationproject.Model.User;
 import com.waltoncrm.authenticationproject.Service.UserService;
 
@@ -22,7 +21,7 @@ public class UserController {
     UserService userService;
 
 
-    @GetMapping("/req/user/index")
+    @GetMapping("/index")
     public String index(Model model ) {
         List<User> userList = userService.readUsersAll();
         System.out.println(userList);
@@ -35,13 +34,13 @@ public class UserController {
         return "user/create";
     }
 
-    @GetMapping("/req/user/show")
+    @GetMapping("/show")
     public String getMethodName(RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("message", "User saved successfully!");
-        return "redirect:/req/user/show/3";
+        return "redirect:/show/3";
     }
 
-     @GetMapping("/req/user/show/{id}")
+     @GetMapping("/show/{id}")
     public String showUser(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<User> userData = userService.readUsersByIdl(id);
         // System.out.println("\n-----------------------------------------------------\n");
@@ -70,13 +69,13 @@ public class UserController {
         Optional<User> userData =  userService.readUsersByIdl(id);
         if(userData != null){
             redirectAttributes.addFlashAttribute("message", "User saved successfully!");
-            return "redirect:/req/user/show/" + id; 
+            return "redirect:/"; 
         }else{
             return "redirect:/req/user/error/" + "User not Created";
         }
     }
 
-    @GetMapping("/req/user/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String editUser(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<User> userData = userService.readUsersByIdl(id);
         if (userData.isPresent()) {
@@ -88,12 +87,12 @@ public class UserController {
         }
     }
 
-    @PostMapping("/req/user/updateUser")
+    @PostMapping("/updateUser")
     public String updateUser(@ModelAttribute User user, RedirectAttributes redirectAttributes) {
         User updateUser = userService.updateUser(user);
         if(updateUser != null ){
             redirectAttributes.addFlashAttribute("message", "User updated successfully!");
-            return "redirect:/req/user/show/" + user.getId();
+            return "redirect:/show/" + user.getId();
         }else{
             return "redirect:/req/user/error/" + "User not Updated";
             

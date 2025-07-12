@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.waltoncrm.authenticationproject.Model.Student;
 import com.waltoncrm.authenticationproject.Service.StudentServiceImpl;
 
-import ch.qos.logback.core.model.Model;
-
 
 @Controller
 // @RestController

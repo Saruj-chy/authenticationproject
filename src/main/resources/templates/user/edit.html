@@ -7,14 +7,23 @@
             font-family: Arial;
             background-color: #f4f4f4;
             padding: 40px;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=600);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
         .card {
             background-color: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            max-width: 400px;
+            max-width: 600px;
             margin: auto;
+            align-items: center;
+            justify-content: center;
         }
         h2 {
             text-align: center;
@@ -54,7 +63,7 @@
 <body>
 <div class="card">
     <h2>Edit User</h2>
-    <form th:action="@{/req/user/updateUser}" method="post" th:object="${user}">
+    <form th:action="@{/updateUser}" method="post" th:object="${user}">
         <input type="hidden" th:field="*{id}" />
 
         <div class="form-group">

@@ -1,10 +1,77 @@
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Welcome</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/signup.js" defer></script>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        } */
+
+        .container {
+            text-align: center;
+            padding: 100px 20px;
+            
+            /* background-image: url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=600); */
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #0083b0;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #eeeeee;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>ALl data show in home page</h1>
+    <section>
+        <div class="container">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the home page of your Spring Boot application.</p>
+        <a href="/index" class="button">User Index</a>
+    </div>
+
+    
+    </section>
+
+    <footer>
+        &copy; Sarose Data - Software Engineer - My Spring Boot App. All rights reserved.
+    </footer>
 </body>
 </html>
